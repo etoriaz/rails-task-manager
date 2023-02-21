@@ -1,14 +1,1 @@
 <%= render 'form', task: @task %>
-
-<div class="form-check">
-  <%= form.check_box :completed, class: "form-check-input", id: "completed", checked: @task.completed %>
-  <%= form.label :completed, class: "form-check-label", for: "completed" %>
-</div>
-
-<%= form_with model: task, url: task_path(task), method: :patch, remote: true do |form| %>
-  <div class="form-check">
-    <%= form.check_box :completed, class: "form-check-input", id: "completed", checked: task.completed %>
-    <%= form.label :completed, class: "form-check-label", for: "completed" %>
-  </div>
-<% end %>
-
